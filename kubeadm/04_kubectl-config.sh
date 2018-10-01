@@ -13,7 +13,7 @@ cluster=$2
 server=$3
 
 # on client machine...
-mkdir -p "$HOME/.kube/certs"
-kubectl config set-credentials "$user" --client-certificate="$HOME/.kube/certs/$user.crt" --client-key="$HOME/.kube/certs/$user.key"
+mkdir -p ".kube/certs"
+kubectl config set-credentials "$user" --client-certificate=".kube/certs/$user.crt" --client-key=".kube/certs/$user.key"
 kubectl config set-context "$user-context" --cluster="$cluster" --user="$user"
-kubectl config set-cluster "$cluster" --server="$server" --certificate-authority="$HOME/.kube/certs/ca.crt"
+kubectl config set-cluster "$cluster" --server="$server" --certificate-authority=".kube/certs/ca.crt"

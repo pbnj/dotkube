@@ -9,7 +9,7 @@ if [ -z "$1" ]; then
 fi
 
 # On master node...
-user=$1
+user="$1"
 
 openssl genrsa -out "$user.key" 4096
 
